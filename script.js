@@ -1,9 +1,12 @@
 
 var adresa = ["pics/1.png", "pics/2.png", "pics/3.png"];
 var taken = [10, 10, 10, 10, 10, 10];
+var clicked = [0, 0, 0, 0, 0, 0];
 var ids = ["1", "2", "3", "4", "5", "6"];
 var img;
 var ok, poz;
+var clicks = 0;
+var scor = document.getElementById ("scor");
 
 var random = function (){
 	var x = Math.random(); 
@@ -53,6 +56,9 @@ var last = 7, lastpoz;
 
 
 	var img1 = function () {
+		if (clicked[0] === 0){
+			clicks++;
+			scor.innerHTML = "Clicks: " + clicks;
 			console.log (taken[0]);
 			console.log (adresa[0]);
 			img = document.getElementById (ids[0]);
@@ -64,6 +70,8 @@ var last = 7, lastpoz;
 				if (taken[last] === taken[0]) {
 					ok ++;
 					last = 7;
+					clicked[0] = 1;
+					clicked[last] = 1;
 				}
 				else {
 					img = document.getElementById (ids[last]);					
@@ -74,10 +82,17 @@ var last = 7, lastpoz;
 					 
 				}
 			}
-			if (ok == 3) alert ("Congratz!");
+			if (ok == 3) {
+				alert ("Congratz!");
+				location.reload;
+			}
+		}
 	}
 
 	var img2 = function () {
+		if (clicked [1] === 0) {
+			clicks++;
+			scor.innerHTML = "Clicks: " + clicks;
 			console.log (taken[1]);
 			console.log (adresa[1]);
 			img = document.getElementById (ids[1]);
@@ -89,6 +104,8 @@ var last = 7, lastpoz;
 				if (taken[last] === taken[1]) {
 					ok ++;
 					last = 7;
+					clicked[1] = 1;
+					clicked[last] = 1;
 				}
 				else {
 					img = document.getElementById (ids[last]);
@@ -99,9 +116,16 @@ var last = 7, lastpoz;
 					 
 				}
 			}
-			if (ok == 3) alert ("Congratz!");
+			if (ok == 3) {
+				alert ("Congratz!");
+				location.reload;
+			}
+		}
 	}
 	var img3 = function () {
+		if (clicked[2] === 0) {
+			clicks++;
+			scor.innerHTML = "Clicks: " + clicks;
 			console.log (taken[2]);
 			console.log (adresa[2]);
 			img = document.getElementById (ids[2]);
@@ -113,6 +137,8 @@ var last = 7, lastpoz;
 				if (taken[last] === taken[2]) {
 					ok ++;
 					last = 7;
+					clicked[2] = 1;
+					clicked[last] = 1;
 				}
 				else {
 					img = document.getElementById (ids[last]);
@@ -123,9 +149,16 @@ var last = 7, lastpoz;
 					 
 				}
 			}
-			if (ok == 3) alert ("Congratz!");
+			if (ok == 3) {
+				alert ("Congratz!");
+				location.reload;
+			}
+		}
 	}
 	var img4 = function () {
+		if (clicked[3] === 0) {
+			clicks++;
+			scor.innerHTML = "Clicks: " + clicks;
 			console.log (taken[3]);
 			console.log (adresa[3]);
 			img = document.getElementById (ids[3]);
@@ -137,6 +170,8 @@ var last = 7, lastpoz;
 				if (taken[last] === taken[3]) {
 					ok ++;
 					last = 7;
+					clicked[3] = 1;
+					clicked[last] = 1;
 				}
 				else {
 					img = document.getElementById (ids[last]);
@@ -147,9 +182,16 @@ var last = 7, lastpoz;
 					 
 				}
 			}
-			if (ok == 3) alert ("Congratz!");
+			if (ok == 3) {
+				alert ("Congratz!");
+				location.reload ();
+			}
+		}
 	}
 	var img5 = function () {
+			if (clicked[4] === 0) {
+			clicks++;
+			scor.innerHTML = "Clicks: " + clicks;
 			console.log (taken[4]);
 			console.log (adresa[4]);
 			img = document.getElementById (ids[4]);
@@ -161,6 +203,8 @@ var last = 7, lastpoz;
 				if (taken[last] === taken[4]) {
 					ok ++;
 					last = 7;
+					clicked[4] = 1;
+					clicked[last] = 1;
 				}
 				else {
 					img = document.getElementById (ids[last]);
@@ -171,9 +215,16 @@ var last = 7, lastpoz;
 					 
 				}
 			}
-			if (ok == 3) alert ("Congratz!");
+			if (ok == 3) {
+				alert ("Congratz!");
+				location.reload ();
+			}
+		}
 	}
 	var img6= function () {
+		if (clicked[5] === 0) {
+			clicks++;
+			scor.innerHTML = "Clicks: " + clicks;
 			console.log (taken[5]);
 			console.log (adresa[5]);
 			img = document.getElementById (ids[5]);
@@ -185,6 +236,8 @@ var last = 7, lastpoz;
 				if (taken[last] === taken[5]) {
 					ok ++;
 					last = 7;
+					clicked[5] = 1;
+					clicked[last] = 1;
 				}
 				else {
 					img = document.getElementById (ids[last]);
@@ -195,6 +248,10 @@ var last = 7, lastpoz;
 					 
 				}
 			}
-			if (ok == 3) alert ("Congratz!");
+			if (ok == 3){
+			 alert ("Congratz!");
+			 location.reload ();
+			}
+		}
 	}
 	

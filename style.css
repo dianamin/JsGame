@@ -2,11 +2,35 @@ body {
 	font-family: Segoe Ui;
 	color: #d9d9d9;
 	background-color: white; /* #454545; */
+     overflow:hidden;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -webkit-animation: rotateInLeft 2s;
+    animation: rotateInLeft 2s;
+}
+
+@-webkit-keyframes rotateInLeft {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes rotateInLeft {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 
 table {
-	margin-top: 100px;
+	margin-top: 30px;
 }
 
 
@@ -46,3 +70,12 @@ table {
     {
         bottom: 0px;
     }
+
+#scor {
+    margin-top: 10px;
+    padding: 2px;
+    width: 100px;
+    height: 30px;
+    background-color: #787878;
+    border-radius: 3px;
+}
