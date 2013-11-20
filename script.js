@@ -56,7 +56,7 @@ var last = 7, lastpoz;
 
 
 	var img1 = function () {
-		if (clicked[0] === 0){
+		if (clicked[0] === 0 && last != 0){
 			clicks++;
 			scor.innerHTML = "Clicks: " + clicks;
 			console.log (taken[0]);
@@ -90,7 +90,7 @@ var last = 7, lastpoz;
 	}
 
 	var img2 = function () {
-		if (clicked [1] === 0) {
+		if (clicked [1] === 0  && last != 1) {
 			clicks++;
 			scor.innerHTML = "Clicks: " + clicks;
 			console.log (taken[1]);
@@ -123,7 +123,7 @@ var last = 7, lastpoz;
 		}
 	}
 	var img3 = function () {
-		if (clicked[2] === 0) {
+		if (clicked[2] === 0 && last != 2) {
 			clicks++;
 			scor.innerHTML = "Clicks: " + clicks;
 			console.log (taken[2]);
@@ -156,7 +156,7 @@ var last = 7, lastpoz;
 		}
 	}
 	var img4 = function () {
-		if (clicked[3] === 0) {
+		if (clicked[3] === 0 && last != 3) {
 			clicks++;
 			scor.innerHTML = "Clicks: " + clicks;
 			console.log (taken[3]);
@@ -189,7 +189,7 @@ var last = 7, lastpoz;
 		}
 	}
 	var img5 = function () {
-			if (clicked[4] === 0) {
+			if (clicked[4] === 0 && last != 4) {
 			clicks++;
 			scor.innerHTML = "Clicks: " + clicks;
 			console.log (taken[4]);
@@ -222,7 +222,7 @@ var last = 7, lastpoz;
 		}
 	}
 	var img6= function () {
-		if (clicked[5] === 0) {
+		if (clicked[5] === 0 && last != 5) {
 			clicks++;
 			scor.innerHTML = "Clicks: " + clicks;
 			console.log (taken[5]);
