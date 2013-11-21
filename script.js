@@ -52,34 +52,37 @@ var delay = function ()
 
 
 ok = 0;
-var last = 7, lastpoz;
+var last = 7;
 
 
-	var img1 = function () {
-		if (clicked[0] === 0 && last != 0){
-			clicks++;
-			scor.innerHTML = "Clicks: " + clicks;
-			console.log (taken[0]);
-			console.log (adresa[0]);
-			img = document.getElementById (ids[0]);
-			img.src = adresa [taken[0]];
-			if (last === 7) {
-				last = 0;
+var flip = function (x) {
+	console.log (x);
+	if (clicked[x] === 0 && last != x){
+		clicks++;
+		scor.innerHTML = "Clicks: " + clicks;
+		console.log (taken[x]);
+		console.log (adresa[x]);
+		img = document.getElementById (ids[x]);
+		img.src = adresa [taken[x]];
+		if (last === 7) {
+			last = x;
+		}
+		else {
+			if (taken[last] === taken[x]) {
+				ok ++;
+				last = 7;
+				clicked[x] = 1;
+				clicked[last] = 1;
 			}
 			else {
-				if (taken[last] === taken[0]) {
-					ok ++;
-					last = 7;
-					clicked[0] = 1;
-					clicked[last] = 1;
-				}
-				else {
+				setTimeout (function () {
 					img = document.getElementById (ids[last]);					
 					img.src = "pics/hidden.png";
-					img = document.getElementById (ids[0]);
+					img = document.getElementById (ids[x]);
 					img.src="pics/hidden.png";
 					last = 7;
-					 
+				}, 500);
+
 				}
 			}
 			if (ok == 3) {
@@ -89,169 +92,3 @@ var last = 7, lastpoz;
 		}
 	}
 
-	var img2 = function () {
-		if (clicked [1] === 0  && last != 1) {
-			clicks++;
-			scor.innerHTML = "Clicks: " + clicks;
-			console.log (taken[1]);
-			console.log (adresa[1]);
-			img = document.getElementById (ids[1]);
-			img.src = adresa [taken[1]];
-			if (last === 7) {
-				last = 1;
-			}
-			else {
-				if (taken[last] === taken[1]) {
-					ok ++;
-					last = 7;
-					clicked[1] = 1;
-					clicked[last] = 1;
-				}
-				else {
-					img = document.getElementById (ids[last]);
-					img.src = "pics/hidden.png";
-					img = document.getElementById (ids[1]);
-					img.src="pics/hidden.png";
-					last = 7;
-					 
-				}
-			}
-			if (ok == 3) {
-				alert ("Congratz!");
-				location.reload;
-			}
-		}
-	}
-	var img3 = function () {
-		if (clicked[2] === 0 && last != 2) {
-			clicks++;
-			scor.innerHTML = "Clicks: " + clicks;
-			console.log (taken[2]);
-			console.log (adresa[2]);
-			img = document.getElementById (ids[2]);
-			img.src = adresa [taken[2]];
-			if (last === 7) {
-				last = 2;
-			}
-			else {
-				if (taken[last] === taken[2]) {
-					ok ++;
-					last = 7;
-					clicked[2] = 1;
-					clicked[last] = 1;
-				}
-				else {
-					img = document.getElementById (ids[last]);
-					img.src = "pics/hidden.png";
-					img = document.getElementById (ids[2]);
-					img.src="pics/hidden.png";
-					last = 7;
-					 
-				}
-			}
-			if (ok == 3) {
-				alert ("Congratz!");
-				location.reload;
-			}
-		}
-	}
-	var img4 = function () {
-		if (clicked[3] === 0 && last != 3) {
-			clicks++;
-			scor.innerHTML = "Clicks: " + clicks;
-			console.log (taken[3]);
-			console.log (adresa[3]);
-			img = document.getElementById (ids[3]);
-			img.src = adresa [taken[3]];
-			if (last === 7) {
-				last = 3;
-			}
-			else {
-				if (taken[last] === taken[3]) {
-					ok ++;
-					last = 7;
-					clicked[3] = 1;
-					clicked[last] = 1;
-				}
-				else {
-					img = document.getElementById (ids[last]);
-					img.src = "pics/hidden.png";
-					img = document.getElementById (ids[3]);
-					img.src="pics/hidden.png";
-					last = 7;
-					 
-				}
-			}
-			if (ok == 3) {
-				alert ("Congratz!");
-				location.reload ();
-			}
-		}
-	}
-	var img5 = function () {
-			if (clicked[4] === 0 && last != 4) {
-			clicks++;
-			scor.innerHTML = "Clicks: " + clicks;
-			console.log (taken[4]);
-			console.log (adresa[4]);
-			img = document.getElementById (ids[4]);
-			img.src = adresa [taken[4]];
-			if (last === 7) {
-				last = 4;
-			}
-			else {
-				if (taken[last] === taken[4]) {
-					ok ++;
-					last = 7;
-					clicked[4] = 1;
-					clicked[last] = 1;
-				}
-				else {
-					img = document.getElementById (ids[last]);
-					img.src = "pics/hidden.png";
-					img = document.getElementById (ids[4]);
-					img.src="pics/hidden.png";
-					last = 7;
-					 
-				}
-			}
-			if (ok == 3) {
-				alert ("Congratz!");
-				location.reload ();
-			}
-		}
-	}
-	var img6= function () {
-		if (clicked[5] === 0 && last != 5) {
-			clicks++;
-			scor.innerHTML = "Clicks: " + clicks;
-			console.log (taken[5]);
-			console.log (adresa[5]);
-			img = document.getElementById (ids[5]);
-			img.src = adresa [taken[5]];
-			if (last === 7) {
-				last = 5;
-			}
-			else {
-				if (taken[last] === taken[5]) {
-					ok ++;
-					last = 7;
-					clicked[5] = 1;
-					clicked[last] = 1;
-				}
-				else {
-					img = document.getElementById (ids[last]);
-					img.src = "pics/hidden.png";
-					img = document.getElementById (ids[5]);
-					img.src="pics/hidden.png";
-					last = 7;
-					 
-				}
-			}
-			if (ok == 3){
-			 alert ("Congratz!");
-			 location.reload ();
-			}
-		}
-	}
-	
