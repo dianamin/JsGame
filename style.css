@@ -53,13 +53,13 @@ table {
 
     #copyright
     {
-            position:absolute;
+            position: absolute;
             bottom: -30px;
             padding-bottom:10px;
             padding-left: 2px;
-            color:darkgray;
+            color: white;
             font-size:15px;
-            background-color: #2E2E1F;
+            background-color: gray;
             width: 150px;
             -transition: bottom 0.5s;
             -webkit-transition: bottom 0.5s;
