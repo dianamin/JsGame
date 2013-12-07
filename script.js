@@ -59,42 +59,45 @@ var delay = function ()
 
 ok = 0;
 var last = 20;
-
+var done = 0;
 
 var flip = function (x) {
-	console.log (x);
-	if (clicked[x] === 0 && last != x){
-		clicks++;
-		scor.innerHTML = "Clicks: " + clicks;
-		console.log (taken[x]);
-		console.log (adresa[x]);
-		img = document.getElementById (ids[x]);
-		img.src = adresa [taken[x]];
-		if (last === 20) {
-			last = x;
-		}
-		else {
-			if (taken[last] === taken[x]) {
-				ok ++;
-				last = 20;
-				clicked[x] = 1;
-				clicked[last] = 1;
+	if (done != 2) {
+		console.log (x);
+		if (clicked[x] === 0 && last != x){
+			clicks++;
+			scor.innerHTML = "Clicks: " + clicks;
+			img = document.getElementById (ids[x]);
+			img.src = adresa [taken[x]];
+			if (last === 20) {
+				last = x;
 			}
 			else {
-				setTimeout (function () {
-					img = document.getElementById (ids[last]);					
-					img.src = "pics/hidden.png";
-					img = document.getElementById (ids[x]);
-					img.src="pics/hidden.png";
+				done = 2;
+				if (taken[last] === taken[x]) {
+					ok ++;
 					last = 20;
-				}, 500);
+					clicked[x] = 1;
+					clicked[last] = 1;
+					done = 0;
+				}
+				else {
+					done = 2;
+					setTimeout (function () {
+						img = document.getElementById (ids[last]);					
+						img.src = "pics/hidden.png";
+						img = document.getElementById (ids[x]);
+						img.src="pics/hidden.png";
+						last = 20;
+						done = 0;
+					}, 500);
 
+					}
+				}
+				if (ok === 6) {
+					alert ("Congratz!");
+					location.reload ();
 				}
 			}
-			if (ok === 6) {
-				alert ("Congratz!");
-				location.reload ();
-			}
-		}
 	}
-
+}
