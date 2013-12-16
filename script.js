@@ -8,7 +8,7 @@ var ok, poz;
 var clicks = 0;
 var scor = document.getElementById ("scor");
 
-var random = function (){
+var random = function () {
 	var x = Math.random(); 
 	if (x < 0.08) return 0;
 	if (x < 0.16) return 1;
@@ -24,7 +24,7 @@ var random = function (){
 	return 11;
 }
 
-for (var i=0; i<5; i++){
+for (var i=0; i<5; i++) {
 	ok = 0;
 	while (ok <= 1) {
 		poz = random ();
@@ -44,8 +44,7 @@ for (var i=0; i<12; i++) {
 	console.log (taken[i]);
 }
 
-var delay = function ()
-{
+var delay = function () {
 	var d1, d2;
 	d1 = new Date ();
 	d2 = new Date ();
