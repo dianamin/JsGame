@@ -25,8 +25,8 @@ body {
 	border-color: red green;
 	text-align: center;
 	padding-top: 20px;
-	font-size: 30px;
-	color: red;
-	text-shadow:0 0 2px red;
+	font-size: 40px;
+	color: darkred;
+	text-shadow:0 0 2px darkred;
 	box-shadow: 2px 2px 5px black;
 }
