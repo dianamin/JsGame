@@ -90,4 +90,5 @@ table {
 
 #title:hover {
     color: red;
+    text-shadow: 0 0 10px #00ff00;
 }

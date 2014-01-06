@@ -1,0 +1,32 @@
+body {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+
+#titlu {
+	color: green;
+	font-size: 50px;
+	font-family: Segoe UI;
+	text-align: center;
+}
+
+.card {
+	cursor: pointer;
+	height: 120px;
+	width: 90px;
+	border-radius: 5px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: red green;
+	text-align: center;
+	padding-top: 20px;
+	font-size: 30px;
+	color: red;
+	text-shadow:0 0 2px red;
+	box-shadow: 2px 2px 5px black;
+}
