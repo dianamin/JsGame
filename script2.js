@@ -4,6 +4,7 @@ var height = 2;
 var ant = -1;
 var ok = 0;
 var pairs = 0;
+var clicks = 0;
 var ids = new Array ();
 var found = new Array ();
 var values = new Array ();
@@ -20,11 +21,13 @@ var random = function () {
 
 var flip = function (card) {
 	if (ok < 2) {
+		clicks++;
 		ok++;
 		$(ids[card]).css ('background-color', 'white');
 		if (ant == -1) {
 			ant = card;
 		}
+
 		else if (values[ant] == values[card]) {
 			pairs++;
 			ant = -1;
@@ -43,8 +46,11 @@ var flip = function (card) {
 		if (pairs == n) {
 			setTimeout (function () {
 				alert ('Congratz!');
+				location.reload ();
 			}, 500);
 		}
+
+		document.getElementById ('clicks').innerHTML = "Number of clicks: " + String (clicks);
 	}
 }
 for (var i = 0; i <= n; i++) found[i] = 0;
