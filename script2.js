@@ -1,8 +1,12 @@
 var n = 6;
 var width = 6;
 var height = 2;
+var ant = -1;
+var ok = 0;
+var pairs = 0;
 var ids = new Array ();
 var found = new Array ();
+var values = new Array ();
 
 
 var random = function () {
@@ -14,24 +18,54 @@ var random = function () {
 	return value;
 }
 
+var flip = function (card) {
+	if (ok < 2) {
+		ok++;
+		$(ids[card]).css ('background-color', 'white');
+		if (ant == -1) {
+			ant = card;
+		}
+		else if (values[ant] == values[card]) {
+			pairs++;
+			ant = -1;
+			ok = 0;
+		}
+		else {
+			
+			setTimeout (function () {
+				$(ids[ant]).css ('background-color', 'red');
+				$(ids[card]).css ('background-color', 'red');
+				ant = -1;
+				ok = 0;
+				pairs++;
+			}, 500);
+
+		}
+	}
+}
+for (var i = 0; i <= n; i++) found[i] = 0;
 
 $(document).ready (function () {
 
-	for (var i = 0; i < n; i++) found[i] = 0;
 	for (var i = 0; i < height; i++) {
 		$('table').append ("<tr> ");
 		for (var j = 0; j < width; j++) {
 			var value = random ();
-			ids [i*3+j] = String (value-1);
-			$('tr:last').append ("<td> <div class = \"card\">" + String (value) + "</div> </td>");
+			ids [i*width+j] = "#" + String (i*width+j);
+			values [i*width+j] = value;
+			$('tr:last').append ("<td> <div class = \"card\" id =\"" + String (i*width+j) + "\" >" + String (value) + "</div> </td>");
 		}
 		$('table').append ("</tr>");
 	}
 
-	$('.card').css ('background-color', 'darkred');
+	$('.card').css ('background-color', 'red');
 
 	$('.card').on ('click', function () {
-		$('.card').css ('background-color', 'white');
+		var id = "#" + this.id
+		var idFound = 0;
+		for (var i = 0; i < 2*n && !idFound; i++) if (ids[i] == id) {
+			flip (i);
+			idFound = 1;
+		}
 	});
-
 })
