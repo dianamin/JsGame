@@ -31,15 +31,19 @@ var flip = function (card) {
 			ok = 0;
 		}
 		else {
-			
 			setTimeout (function () {
-				$(ids[ant]).css ('background-color', 'red');
-				$(ids[card]).css ('background-color', 'red');
+				$(ids[ant]).css ('background-color', 'DarkCyan');
+				$(ids[card]).css ('background-color', 'DarkCyan');
 				ant = -1;
 				ok = 0;
-				pairs++;
 			}, 500);
 
+		}
+
+		if (pairs == n) {
+			setTimeout (function () {
+				alert ('Congratz!');
+			}, 500);
 		}
 	}
 }
@@ -58,7 +62,7 @@ $(document).ready (function () {
 		$('table').append ("</tr>");
 	}
 
-	$('.card').css ('background-color', 'red');
+	$('.card').css ('background-color', 'DarkCyan');
 
 	$('.card').on ('click', function () {
 		var id = "#" + this.id

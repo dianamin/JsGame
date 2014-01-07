@@ -9,7 +9,7 @@ body {
 
 
 #titlu {
-	color: green;
+	color: darkCyan ;
 	font-size: 50px;
 	font-family: Segoe UI;
 	text-align: center;
@@ -22,11 +22,11 @@ body {
 	border-radius: 5px;
 	border-style: solid;
 	border-width: 2px;
-	border-color: red green;
+	border-color: cyan green;
 	text-align: center;
 	padding-top: 20px;
 	font-size: 40px;
-	color: darkred;
-	text-shadow:0 0 2px darkred;
+	color: darkCyan;
+	text-shadow:0 0 2px darkCyan;
 	box-shadow: 2px 2px 5px black;
 }
