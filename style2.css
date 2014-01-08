@@ -5,6 +5,7 @@ body {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	overflow: hidden;
 }
 
 
@@ -29,9 +30,33 @@ body {
 	color: darkCyan;
 	text-shadow:0 0 2px darkCyan;
 	box-shadow: 2px 2px 5px black;
+	-transition: background-color 1s;
+	-transition: background-color 1s;
+	-transition: background-color 1s;
 }
 
 #clicks {
 	color: gray;
 	font-size: 20px;
+}
+
+#copyright
+{
+    position: absolute;
+    bottom: -30px;
+    right: 10px;
+    padding-bottom:10px;
+    padding-left: 2px;
+    color: white;
+    font-size:15px;
+    background-color: gray;
+    width: 150px;
+    -transition: bottom 0.5s;
+    -webkit-transition: bottom 0.5s;
+    -moz-transition: bottom 0.5s;
+} 
+
+#copyright:hover
+{
+    bottom: 0px;
 }
