@@ -30,6 +30,7 @@ body {
 	color: darkCyan;
 	text-shadow:0 0 2px darkCyan;
 	box-shadow: 2px 2px 5px black;
+	display: none;
 	-transition: background-color 1s;
 	-transition: background-color 1s;
 	-transition: background-color 1s;

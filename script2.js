@@ -64,6 +64,7 @@ $(document).ready (function () {
 			ids [i*width+j] = "#" + String (i*width+j);
 			values [i*width+j] = value;
 			$('tr:last').append ("<td> <div class = \"card\" id =\"" + String (i*width+j) + "\" >" + String (value) + "</div> </td>");
+			$(ids[i*width+j]).fadeIn ('slow');
 		}
 		$('table').append ("</tr>");
 	}
