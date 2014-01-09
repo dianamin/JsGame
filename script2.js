@@ -5,6 +5,7 @@ var ant = -1;
 var ok = 0;
 var pairs = 0;
 var clicks = 0;
+var done = false;
 var ids = new Array ();
 var found = new Array ();
 var values = new Array ();
@@ -46,17 +47,21 @@ var flip = function (card) {
 		if (pairs == n) {
 			setTimeout (function () {
 				alert ('Congratz!');
-				location.reload ();
+				generate ();
 			}, 500);
 		}
 
 		document.getElementById ('clicks').innerHTML = "Number of clicks: " + String (clicks);
 	}
 }
-for (var i = 0; i <= n; i++) found[i] = 0;
 
-$(document).ready (function () {
 
+var generate = function () {
+	for (var i = 0; i <= n; i++) found[i] = 0;
+	done = false;
+	ok = 0;
+	pairs = 0;
+	ant = -1;
 	for (var i = 0; i < height; i++) {
 		$('table').append ("<tr> ");
 		for (var j = 0; j < width; j++) {
@@ -64,7 +69,7 @@ $(document).ready (function () {
 			ids [i*width+j] = "#" + String (i*width+j);
 			values [i*width+j] = value;
 			$('tr:last').append ("<td> <div class = \"card\" id =\"" + String (i*width+j) + "\" >" + String (value) + "</div> </td>");
-			$(ids[i*width+j]).fadeIn ('slow');
+			$(ids[i*width+j]).fadeIn ('slow')
 		}
 		$('table').append ("</tr>");
 	}
@@ -79,4 +84,18 @@ $(document).ready (function () {
 			idFound = 1;
 		}
 	});
+}
+
+var getSize = function () {
+	width = Number (document.getElementById ('width').value);
+	height = Number (document.getElementById ('height').value);
+	$('#query').fadeOut ('fast');
+	n = width * height / 2;
+ 	generate ();
+}
+
+
+$(document).ready (function () {
+	$('#query').fadeIn ('slow');
 })
+
