@@ -28,7 +28,6 @@ var flip = function (card) {
 		if (ant == -1) {
 			ant = card;
 		}
-
 		else if (values[ant] == values[card]) {
 			pairs++;
 			ant = -1;
@@ -56,12 +55,14 @@ var flip = function (card) {
 }
 
 
+
 var generate = function () {
 	for (var i = 0; i <= n; i++) found[i] = 0;
 	done = false;
 	ok = 0;
 	pairs = 0;
 	ant = -1;
+	clicks = 0;
 	for (var i = 0; i < height; i++) {
 		$('table').append ("<tr> ");
 		for (var j = 0; j < width; j++) {
@@ -73,8 +74,22 @@ var generate = function () {
 		}
 		$('table').append ("</tr>");
 	}
-
 	$('.card').css ('background-color', 'DarkCyan');
+
+}
+
+
+	
+
+
+$(document).ready (function () {
+	$('#query').fadeIn ('slow');
+	$('#send').on ('click', function () {
+			width = Number (document.getElementById ('width').value);
+	height = Number (document.getElementById ('height').value);
+	$('#query').fadeOut ('fast');
+	n = width * height / 2;
+ 	generate ();
 
 	$('.card').on ('click', function () {
 		var id = "#" + this.id
@@ -83,19 +98,8 @@ var generate = function () {
 			flip (i);
 			idFound = 1;
 		}
+		});
 	});
-}
 
-var getSize = function () {
-	width = Number (document.getElementById ('width').value);
-	height = Number (document.getElementById ('height').value);
-	$('#query').fadeOut ('fast');
-	n = width * height / 2;
- 	generate ();
-}
-
-
-$(document).ready (function () {
-	$('#query').fadeIn ('slow');
 })
 
