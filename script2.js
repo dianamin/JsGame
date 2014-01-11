@@ -5,11 +5,11 @@ var ant = -1;
 var ok = 0;
 var pairs = 0;
 var clicks = 0;
+var scor = 0;
 var done = false;
 var ids = new Array ();
 var found = new Array ();
 var values = new Array ();
-
 
 var random = function () {
 	var value = Math.floor (n*Math.random ()) + 1;
@@ -40,12 +40,11 @@ var flip = function (card) {
 				ant = -1;
 				ok = 0;
 			}, 500);
-
 		}
-
 		if (pairs == n) {
 			setTimeout (function () {
 				alert ('Congratz!');
+				Add ();
 				for (var i = 0; i < 2*n; i++) $(ids[i]).fadeOut ('fast');
 				$('table').empty ();
 				$('#game').append ("<table cellspacing = 20px> </table>")
@@ -57,6 +56,12 @@ var flip = function (card) {
 	}
 }
 
+var Add = function () {
+	var max = n + n * 1.0 / 2;
+	if (5*max-clicks > 5) score += 5*max-clicks;
+	else score += 5;
+	console.log (score);
+}
 
 
 var generate = function () {
@@ -66,6 +71,8 @@ var generate = function () {
 	pairs = 0;
 	ant = -1;
 	clicks = 0;
+	score = 0;
+	document.getElementById ('clicks').innerHTML = "Number of clicks: 0";
 	for (var i = 0; i < height; i++) {
 		$('table').append ("<tr> ");
 		for (var j = 0; j < width; j++) {
@@ -97,12 +104,12 @@ $(document).ready (function () {
 		width = Number (document.getElementById ('width').value);
 		height = Number (document.getElementById ('height').value);
 		n = width * height / 2;
+		score = 0.0;
 		if (width * height % 2 == 0) {
 			$('#query').fadeOut ('fast');
 			generate ();
 		}
 		else document.getElementById ("error").innerHTML = "It must be an even number of cards!"
-
 	});
 	
 })
