@@ -77,7 +77,6 @@ var generate = function () {
 		}
 		$('table').append ("</tr>");
 	}
-	console.log (values);
 	$('.card').css ('background-color', 'DarkCyan');
 	$('.card').on ('click', function () {
 			var id = "#" + this.id
