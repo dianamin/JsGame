@@ -5,7 +5,7 @@ var ant = -1;
 var ok = 0;
 var pairs = 0;
 var clicks = 0;
-var scor = 0;
+var score = 0;
 var done = false;
 var ids = new Array ();
 var found = new Array ();
@@ -57,10 +57,10 @@ var flip = function (card) {
 }
 
 var Add = function () {
-	var max = n + n * 1.0 / 2;
-	if (5*max-clicks > 5) score += 5*max-clicks;
-	else score += 5;
-	console.log (score);
+	//better score formula will be added
+	score = score + n/clicks * 100;
+	score = Math.floor (score);
+	document.getElementById ('score').innerHTML = "Score: " + String (score);
 }
 
 
@@ -71,7 +71,6 @@ var generate = function () {
 	pairs = 0;
 	ant = -1;
 	clicks = 0;
-	score = 0;
 	document.getElementById ('clicks').innerHTML = "Number of clicks: 0";
 	for (var i = 0; i < height; i++) {
 		$('table').append ("<tr> ");
@@ -107,6 +106,7 @@ $(document).ready (function () {
 		score = 0.0;
 		if (width * height % 2 == 0) {
 			$('#query').fadeOut ('fast');
+			document.getElementById ('score').innerHTML = "Score: 0";
 			generate ();
 		}
 		else document.getElementById ("error").innerHTML = "It must be an even number of cards!"
