@@ -97,9 +97,12 @@ $(document).ready (function () {
 	$('#send').on ('click', function () {
 		width = Number (document.getElementById ('width').value);
 		height = Number (document.getElementById ('height').value);
-		$('#query').fadeOut ('fast');
 		n = width * height / 2;
- 		generate ();
+		if (width * height % 2 == 0) {
+			generate ();
+			$('#query').fadeOut ('fast');
+		}
+		else document.getElementById ("error").innerHTML = "It must be an even number of cards!"
 
 	});
 	

@@ -92,3 +92,7 @@ body {
 #send:hover {
 	background-color: cyan;
 }
+
+#error {
+	color: red;
+}
