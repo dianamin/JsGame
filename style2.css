@@ -96,3 +96,23 @@ body {
 #error {
 	color: red;
 }
+
+
+#score {
+	position: absolute;
+    right: 0px;
+    width : 100px;
+    height : 30px;
+    padding-top: 5px;
+    padding-left: 15px;
+    background-color: #f0f0f0;
+    color: darkcyan;
+    border-radius: 5px 0px 0px 5px;
+    -transition: width 0.5s;
+    -webkit-transition: width 0.5s;
+    -moz-transition: width 0.5s;
+}
+
+#score:hover {
+	width: 150px;
+}
