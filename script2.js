@@ -46,6 +46,9 @@ var flip = function (card) {
 		if (pairs == n) {
 			setTimeout (function () {
 				alert ('Congratz!');
+				for (var i = 0; i < 2*n; i++) $(ids[i]).fadeOut ('fast');
+				$('table').empty ();
+				$('#game').append ("<table cellspacing = 20px> </table>")
 				generate ();
 			}, 500);
 		}
@@ -74,32 +77,38 @@ var generate = function () {
 		}
 		$('table').append ("</tr>");
 	}
+	console.log (values);
 	$('.card').css ('background-color', 'DarkCyan');
 
 }
 
 
-	
-
-
 $(document).ready (function () {
 	$('#query').fadeIn ('slow');
 	$('#send').on ('click', function () {
-			width = Number (document.getElementById ('width').value);
-	height = Number (document.getElementById ('height').value);
-	$('#query').fadeOut ('fast');
-	n = width * height / 2;
- 	generate ();
+		width = Number (document.getElementById ('width').value);
+		height = Number (document.getElementById ('height').value);
+		$('#query').fadeOut ('fast');
+		n = width * height / 2;
+ 		generate ();
 
-	$('.card').on ('click', function () {
-		var id = "#" + this.id
-		var idFound = 0;
-		for (var i = 0; i < 2*n && !idFound; i++) if (ids[i] == id) {
-			flip (i);
-			idFound = 1;
-		}
+		$('.card').on ('click', function () {
+			var id = "#" + this.id
+			var idFound = 0;
+			for (var i = 0; i < 2*n && !idFound; i++) if (ids[i] == id) {
+				flip (i);
+				idFound = 1;
+			}
 		});
 	});
+	$('.card').on ('click', function () {
+			var id = "#" + this.id
+			var idFound = 0;
+			for (var i = 0; i < 2*n && !idFound; i++) if (ids[i] == id) {
+				flip (i);
+				idFound = 1;
+			}
+		});
 
 })
 
