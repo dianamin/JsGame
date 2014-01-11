@@ -79,6 +79,15 @@ var generate = function () {
 	}
 	console.log (values);
 	$('.card').css ('background-color', 'DarkCyan');
+	$('.card').on ('click', function () {
+			var id = "#" + this.id
+			var idFound = 0;
+			for (var i = 0; i < 2*n && !idFound; i++) if (ids[i] == id) {
+				flip (i);
+				idFound = 1;
+			}
+		});
+
 
 }
 
@@ -92,23 +101,7 @@ $(document).ready (function () {
 		n = width * height / 2;
  		generate ();
 
-		$('.card').on ('click', function () {
-			var id = "#" + this.id
-			var idFound = 0;
-			for (var i = 0; i < 2*n && !idFound; i++) if (ids[i] == id) {
-				flip (i);
-				idFound = 1;
-			}
-		});
 	});
-	$('.card').on ('click', function () {
-			var id = "#" + this.id
-			var idFound = 0;
-			for (var i = 0; i < 2*n && !idFound; i++) if (ids[i] == id) {
-				flip (i);
-				idFound = 1;
-			}
-		});
-
+	
 })
 
