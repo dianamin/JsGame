@@ -21,7 +21,7 @@ var random = function () {
 }
 
 var flip = function (card) {
-	if (ok < 2) {
+	if (ok < 2 && ant != card) {
 		clicks++;
 		ok++;
 		$(ids[card]).css ('background-color', 'white');
@@ -99,8 +99,8 @@ $(document).ready (function () {
 		height = Number (document.getElementById ('height').value);
 		n = width * height / 2;
 		if (width * height % 2 == 0) {
-			generate ();
 			$('#query').fadeOut ('fast');
+			generate ();
 		}
 		else document.getElementById ("error").innerHTML = "It must be an even number of cards!"
 
