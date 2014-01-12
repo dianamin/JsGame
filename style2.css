@@ -9,7 +9,6 @@ body {
 	color: darkcyan;
 }
 
-
 #titlu {
 	font-size: 50px;
 	font-family: Segoe UI;
@@ -96,7 +95,6 @@ body {
 #error {
 	color: red;
 }
-
 
 #score {
 	position: absolute;

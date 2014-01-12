@@ -83,6 +83,7 @@ var generate = function () {
 		}
 		$('table').append ("</tr>");
 	}
+
 	$('.card').css ('background-color', 'DarkCyan');
 	$('.card').on ('click', function () {
 			var id = "#" + this.id
@@ -92,8 +93,6 @@ var generate = function () {
 				idFound = 1;
 			}
 		});
-
-
 }
 
 
@@ -111,6 +110,4 @@ $(document).ready (function () {
 		}
 		else document.getElementById ("error").innerHTML = "It must be an even number of cards!"
 	});
-	
 })
-
