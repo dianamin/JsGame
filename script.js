@@ -103,11 +103,11 @@ $(document).ready (function () {
 		height = Number (document.getElementById ('height').value);
 		n = width * height / 2;
 		score = 0.0;
-		if (width * height % 2 == 0) {
+		if (width * height % 2 == 0 && width * height != 0) {
 			$('#query').fadeOut ('fast');
 			document.getElementById ('score').innerHTML = "Score: 0";
 			generate ();
 		}
-		else document.getElementById ("error").innerHTML = "It must be an even number of cards!"
+		else document.getElementById ("error").innerHTML = "It must be an even and != 0 number of cards!"
 	});
 })
