@@ -7,6 +7,7 @@ var pairs = 0;
 var clicks = 0;
 var score = 0;
 var done = false;
+var game = 0;
 var ids = new Array ();
 var found = new Array ();
 var values = new Array ();
@@ -71,6 +72,8 @@ var generate = function () {
 	pairs = 0;
 	ant = -1;
 	clicks = 0;
+	game ++;
+	document.getElementById ('gamenr').innerHTML = "Game: " + String (game);
 	document.getElementById ('clicks').innerHTML = "Number of clicks: 0";
 	for (var i = 0; i < height; i++) {
 		$('table').append ("<tr> ");
